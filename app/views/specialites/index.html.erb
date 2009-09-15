@@ -1,0 +1,15 @@
+<% title "Specialites" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for specialite in @specialites %>
+    <tr>
+      <td><%=h specialite.name %></td>
+      <td><%= link_to "Edit", edit_specialite_path(specialite) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Specialite", new_specialite_path %></p>
