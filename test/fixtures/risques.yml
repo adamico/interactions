@@ -1,7 +1,0 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-risque1:
-  libelle: "Pour des doses anti-inflammatoires d'acide acétylsalicylique (>=1g par prise et/ou >=3g par jour) ou pour des doses antalgiques ou antipyrétiques (>=500 mg par prise et/ou <3g par jour) : Insuffisance rénale aiguë chez le malade déshydraté, par diminution de la filtration glomérulaire secondaire à une diminution de la synthèse des prostaglandines rénales. Par ailleurs, réduction de l'effet antihypertenseur."
-
-risque2:
-  libelle: "Risque d'augmentation des concentrations plasmatiques d'estramustine par le clodronate."

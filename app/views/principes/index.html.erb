@@ -1,8 +1,5 @@
-<% title "Principes" %>
-<h1>Principes</h1>
+<% title "Principes actifs" %>
+<h1>Liste des principes actifs</h1>
 <% @principes.each do |principe| %>
-  <h2><%= h(principe.name) %></h2>
-  <p>
-    <%= h(principe.liste_classes) %>
-  </p>
+  <h2><%= link_to h(principe.name), principe %></h2>
 <% end %>
