@@ -9,36 +9,59 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090917133926) do
+ActiveRecord::Schema.define(:version => 20090922100659) do
+
+  create_table "attribution_contraintes", :force => true do |t|
+    t.text     "cat"
+    t.integer  "contrainte_id"
+    t.integer  "interaction_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "classes", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "liste_principes"
+    t.string   "description"
+  end
+
+  create_table "classes_principes", :id => false, :force => true do |t|
+    t.integer "classe_id"
+    t.integer "principe_id"
   end
 
   create_table "contraintes", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "acronyme"
+    t.text     "description"
   end
 
   create_table "interactions", :force => true do |t|
-    t.string   "cat"
-    t.integer  "principe_id"
-    t.integer  "contrainte_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "inter_principe_id"
+    t.integer  "classe_id"
+    t.integer  "inter_classe_id"
+    t.integer  "risque_id"
   end
 
   create_table "principes", :force => true do |t|
     t.string "name"
+    t.text   "liste_classes"
   end
 
   create_table "principes_specialites", :id => false, :force => true do |t|
     t.integer "principe_id"
     t.integer "specialite_id"
+  end
+
+  create_table "risques", :force => true do |t|
+    t.text     "libelle"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "specialites", :force => true do |t|

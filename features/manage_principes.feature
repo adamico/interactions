@@ -4,7 +4,7 @@ Feature: Manage Principes
   I want to create and manage principes
 
   Scenario: Principes List
-    Given I have principes named acebutolol, amlodipine
+    Given I have principes named aspirine, valsartan
     When I go to the list of principes
-    Then I should see "acebutolol"
-    And I should see "amlodipine"
+    Then I should see "aspirine"
+    And I should see "valsartan"

@@ -12,13 +12,13 @@ module NavigationHelpers
       '/'
     
     # Add more mappings here.
+    when /the list of principes/
+      principes_path
+
     # Here is a more fancy example:
     #
     #   when /^(.*)'s profile page$/i
     #     user_profile_path(User.find_by_login($1))
-
-    when /the list of principes/
-      principes_path
 
     else
       raise "Can't find mapping from \"#{page_name}\" to a path.\n" +

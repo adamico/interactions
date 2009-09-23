@@ -1,7 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  cat: 
+aspirine_ara2:
+  classe: aspirine
+  inter_classe: ara2
+  risque: risque1
 
-two:
-  cat: 
+a_clodronique_estramustine:
+  classe: a_clodronique
+  inter_classe: estramustine
+  risque: risque2

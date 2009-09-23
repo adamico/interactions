@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  cat: Hydrater le malade et surveiller la fonction rénale en début de traitement.
+  contrainte: pe
+  interaction: aspirine_ara2
+
+two:
+  cat: Surveillance clinique au cours de l’association.
+  contrainte: pe
+  interaction: a_clodronique_estramustine

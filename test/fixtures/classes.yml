@@ -1,5 +1,19 @@
-one:
-  name: MyString
+ara2:
+  name: "antagonistes des récepteurs de l'angiotensine II"
+  liste_principes:
+  description:
 
-two:
-  name: MyString
+aaplaq:
+  name: antiagrégants plaquettaires
+  liste_principes: aspirine
+  description: "Plusieurs substances sont impliquées dans des interactions, du fait de leurs propriétés antiagrégantes plaquettaires. L'utilisation de plusieurs antiagrégants plaquettaires majore le risque de saignement, de même que leur association à l'héparine et aux molécules apparentées, aux anticoagulants oraux et aux thrombolytiques, et doit être prise en compte en maintenant une surveillance clinique régulière. Pour l'acide acétylsalicylique, se reporter aux interactions qui lui sont propres."
+
+biphosphonates:
+  name: $LABEL
+  liste_principes:
+  description:
+
+cytotoxiques:
+  name: $LABEL
+  liste_principes:
+  description:

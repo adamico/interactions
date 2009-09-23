@@ -1,5 +1,14 @@
-one:
-  name: MyString
+aspirine500:
+  name: aspirine 500
 
-two:
-  name: MyString
+aspirinefferv:
+  name: aspirine effervescente
+
+clastoban:
+  name: $LABEL
+
+lytos:
+  name: $LABEL
+
+tareg:
+  name: $LABEL
