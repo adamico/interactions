@@ -1,0 +1,10 @@
+<% title @principe.name %>
+
+<h2>Classes d'interaction</h2>
+<% @principe.classes.each do |classe| %>
+  <% if classe.name == @principe.name %>
+    <p>Interactions en propre mais voir aussi :</p>
+  <% else %>
+    <p><%= h(classe.name) %></p>
+  <% end %>
+<% end %>
