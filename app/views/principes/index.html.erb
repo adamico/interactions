@@ -3,3 +3,4 @@
 <% @principes.each do |principe| %>
   <h2><%= link_to h(principe.name), principe %></h2>
 <% end %>
+<%= link_to "New Principe", new_principe_path %>

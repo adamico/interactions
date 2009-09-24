@@ -11,4 +11,29 @@ class PrincipesController < ApplicationController
       wants.xml  { render :xml => @principe }
     end
   end
+
+  def new
+    @principe = Principe.new
+  
+    respond_to do |wants|
+      wants.html # new.html.erb
+      wants.xml  { render :xml => @principe }
+    end
+  end
+
+  def create
+    @principe = Principe.new(params[:principe])
+  
+    respond_to do |wants|
+      if @principe.save
+        flash[:notice] = 'Principe was successfully created.'
+        wants.html { redirect_to(@principe) }
+        wants.xml  { render :xml => @principe, :status => :created, :location => @principe }
+      else
+        wants.html { render :action => "new" }
+        wants.xml  { render :xml => @principe.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
 end
