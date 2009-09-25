@@ -7,12 +7,12 @@ Feature: Manage Principes
     Given I have principes named acide acetylsalicylique, valsartan, trometamol
       And I have classes named acide acetylsalicylique, antiagrégants plaquettaires, alcalinisants urinaires
 
-  Scenario: List all principes
+  Scenario: List principes
     When I go to the list of principes
     Then I should see "acide acetylsalicylique"
     And I should see "valsartan"
 
-  Scenario: View a principe interaction classes
+  Scenario: View principe interaction classes
     Given I have alcalinisants urinaires as classes names for trometamol
       And I am on the list of principes
     When I follow "trometamol"
@@ -26,8 +26,8 @@ Feature: Manage Principes
     Then I should see "acide acetylsalicylique"
       And I should see "Interactions en propre"
       And I should see "antiagrégants plaquettaires"
-@focus
-  Scenario: Create a valid principe
+
+  Scenario: Create valid principe
     Given I have no principes
       And I am on the list of principes
     When I follow "New Principe"
@@ -36,3 +36,11 @@ Feature: Manage Principes
     Then I should see "Principe was successfully created."
       And I should see "tartampionate de sodium"
       And I should have 1 principe
+
+  Scenario: Edit principe
+    Given I am on the list of principes
+    When I follow "Edit"
+      And I fill in "Name" with "aspirine"
+      And I press "Submit"
+    Then I should see "Principe was successfully updated."
+      And I should see "aspirine"

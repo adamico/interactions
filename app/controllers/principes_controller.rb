@@ -36,4 +36,22 @@ class PrincipesController < ApplicationController
     end
   end
 
+  def edit
+    @principe = Principe.find(params[:id])
+  end
+
+  def update
+    @principe = Principe.find(params[:id])
+  
+    respond_to do |wants|
+      if @principe.update_attributes(params[:principe])
+        flash[:notice] = 'Principe was successfully updated.'
+        wants.html { redirect_to(@principe) }
+        wants.xml  { head :ok }
+      else
+        wants.html { render :action => "edit" }
+        wants.xml  { render :xml => @principe.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
 end
