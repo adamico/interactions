@@ -26,7 +26,7 @@ class PrincipesController < ApplicationController
   
     respond_to do |wants|
       if @principe.save
-        flash[:notice] = 'Principe was successfully created.'
+        flash[:notice] = 'Le principe actif a été créé avec succès.'
         wants.html { redirect_to(@principe) }
         wants.xml  { render :xml => @principe, :status => :created, :location => @principe }
       else
@@ -45,13 +45,23 @@ class PrincipesController < ApplicationController
   
     respond_to do |wants|
       if @principe.update_attributes(params[:principe])
-        flash[:notice] = 'Principe was successfully updated.'
+        flash[:notice] = 'Le principe actif a été modifié avec succès.'
         wants.html { redirect_to(@principe) }
         wants.xml  { head :ok }
       else
         wants.html { render :action => "edit" }
         wants.xml  { render :xml => @principe.errors, :status => :unprocessable_entity }
       end
+    end
+  end
+
+  def destroy
+    @principe = Principe.find(params[:id])
+    @principe.destroy
+  
+    respond_to do |wants|
+      wants.html { redirect_to(principes_url) }
+      wants.xml  { head :ok }
     end
   end
 end

@@ -15,6 +15,9 @@ module NavigationHelpers
     when /the list of principes/
       principes_path
 
+    when /^(.*)'s page$/i
+      principe_path(Principe.find_by_name($1))
+
     # Here is a more fancy example:
     #
     #   when /^(.*)'s profile page$/i

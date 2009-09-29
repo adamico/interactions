@@ -3,3 +3,7 @@ Given /^I have classes named (.+)$/ do |names|
     Classe.create!(:name => name)
   end
 end
+
+Given /^a classe named (.+)$/ do |name|
+  @classe = Classe.create!(:name => name)
+end

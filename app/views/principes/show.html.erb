@@ -3,8 +3,13 @@
 <h2>Classes d'interaction</h2>
 <% @principe.classes.each do |classe| %>
   <% if classe.name == @principe.name %>
-    <p>Interactions en propre mais voir aussi :</p>
+    <% if @principe.classes.count == 1 %>
+      <p>Interactions en propre uniquement</p>
+    <% else %>
+      <p>Interactions en propre mais voir aussi :</p>
+    <% end %>
   <% else %>
     <p><%= h(classe.name) %></p>
   <% end %>
 <% end %>
+<p><%= link_to 'Détruire', @principe, :confirm => 'Êtes-vous sûr?', :method => :delete %></p>
