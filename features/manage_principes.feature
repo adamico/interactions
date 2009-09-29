@@ -1,6 +1,6 @@
 Feature: Manage Principes
-  In order to make a Drug Interaction Database
-  As a physician
+  In order to modify the Drug Interaction Database
+  As the admin
   I want to browse, create, destroy and update principes
 
   Background:
@@ -25,6 +25,7 @@ Feature: Manage Principes
     When I follow "acide acetylsalicylique"
     Then I should see "acide acetylsalicylique"
       And I should see "Interactions en propre"
+      And I should see "mais voir aussi :"
       And I should see "antiagrégants plaquettaires"
 
   Scenario: Show a principe having only "interactions en propre"
@@ -32,7 +33,8 @@ Feature: Manage Principes
       And I am on the list of principes
     When I follow "acide acetohydroxamique"
     Then I should see "acide acetohydroxamique"
-      And I should see "Interactions en propre uniquement"
+      And I should see "Interactions en propre"
+      And I should see "uniquement"
 
   Scenario: Create valid principe
     Given I have no principes
@@ -54,8 +56,6 @@ Feature: Manage Principes
 
   Scenario: Destroy principe
     Given I have 4 principes
-      And I am on valsartan's page
+      And I am on valsartan's classes page
     When I follow "Détruire"
-      And I confirm
-    Then I should see "Principe was successfully destroyed."
-      And I should have 3 principes
+    Then I should have 3 principes

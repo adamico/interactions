@@ -15,8 +15,14 @@ module NavigationHelpers
     when /the list of principes/
       principes_path
 
-    when /^(.*)'s page$/i
+    when /the list of classes/
+      classes_path
+
+    when /^(.*)'s classes page$/i
       principe_path(Principe.find_by_name($1))
+
+    when /^(.*)'s interactions page$/i
+      classe_path(Classe.find_by_name($1))
 
     # Here is a more fancy example:
     #

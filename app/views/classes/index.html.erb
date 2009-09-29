@@ -1,15 +1,15 @@
-<% title "Classes" %>
+<% title "Classes d'interaction" %>
 
 <table>
   <tr>
-    <th>Name</th>
+    <th>Nom</th>
   </tr>
-  <% for classe in @classes %>
+  <% @classes.each do |classe| %>
     <tr>
       <td><%=h classe.name %></td>
-      <td><%= link_to "Edit", edit_classe_path(classe) %></td>
+      <td><%= link_to "Modifier", edit_classe_path(classe) %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "New Classe", new_classe_path %></p>
+<p><%= link_to "Rajouter une classe d'interaction", new_classe_path %></p>
