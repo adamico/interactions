@@ -13,4 +13,5 @@
     <p><%= h(classe.name) %></p>
   <% end %>
 <% end %>
+<p><%= link_to "Modifier", edit_principe_path(@principe) %></p>
 <p><%= link_to 'Détruire', @principe, :confirm => 'Êtes-vous sûr?', :method => :delete %></p>

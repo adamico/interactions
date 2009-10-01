@@ -59,3 +59,12 @@ Feature: Manage Principes
       And I am on valsartan's classes page
     When I follow "Détruire"
     Then I should have 3 principes
+
+  Scenario: Add 1 classe d'interaction to principe
+    Given I am on acide acetylsalicylique's classes page
+    When I follow "Modifier"
+      And I fill in "Classe" with "antiagrégants plaquettaires"
+      And I press "Sauvegarder"
+    Then I should see "Le principe actif a été modifié avec succès."
+      And I should see "acide acetylsalicylique"
+      And I should see "antiagrégants plaquettaires"

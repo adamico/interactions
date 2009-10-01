@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090922100659) do
+ActiveRecord::Schema.define(:version => 20090929155842) do
 
   create_table "attribution_contraintes", :force => true do |t|
     t.text     "cat"
@@ -33,11 +33,9 @@ ActiveRecord::Schema.define(:version => 20090922100659) do
   end
 
   create_table "contraintes", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "acronyme"
-    t.text     "description"
+    t.string "name"
+    t.string "acronyme"
+    t.text   "description"
   end
 
   create_table "interactions", :force => true do |t|

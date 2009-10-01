@@ -1,8 +1,22 @@
-<% form_for @principe do |f| %>
-  <%= f.error_messages %>
+<% @principe.classes.build if @principe.classes.empty? %>
+<% form_for @principe do |principe_form| %>
+  <%= principe_form.error_messages %>
+
   <p>
-    <%= f.label :name, "Nom" %><br />
-    <%= f.text_field :name %>
+    <%= principe_form.label :name, "Nom" %><br />
+    <%= principe_form.text_field :name %>
   </p>
-  <p><%= f.submit "Sauvegarder" %></p>
+  <h2>Classes</h2>
+  <% principe_form.fields_for :classes do |class_form| %>
+    <p>
+      <%= class_form.label :name, "Classe:" %>
+      <%= class_form.text_field :name %>
+    </p>
+    <% unless class_form.object.nil? || class_form.object.new_record? %>
+      <%= class_form.label :_delete, 'Enlever:' %>
+      <%= class_form.check_box :_delete %>
+    <% end %>
+  <% end %>
+
+  <p><%= principe_form.submit "Sauvegarder" %></p>
 <% end %>
