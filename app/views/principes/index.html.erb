@@ -1,5 +1,11 @@
 <% title "Principes actifs" %>
-<h1>Liste des principes actifs</h1>
+
+<% form_tag principes_path, :method =>'get' do %>
+  <%= label_tag :search, "Rechercher" %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Rechercher", :name => nil %>
+<% end -%>
+
 <table>
   <% @principes.each do |principe| %>
     <tr>
@@ -26,4 +32,4 @@
     </tr>
   <% end %>
 </table>
-<%= link_to "Rajouter un principe actif", new_principe_path %>
+<p><%= link_to "Rajouter un principe actif", new_principe_path %></p>

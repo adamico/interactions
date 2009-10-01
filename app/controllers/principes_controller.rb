@@ -1,6 +1,6 @@
 class PrincipesController < ApplicationController
   def index
-    @principes = Principe.all(:include => :classes)
+    @principes = Principe.name_like_all(params[:search].to_s.split).ascend_by_name(:include => :classes)
   end
 
   def show

@@ -16,15 +16,13 @@ Feature: Manage Principes
 
   Scenario: Show a principe not having "interactions en propre"
     Given I have alcalinisants urinaires as classes names for trometamol
-      And I am on the list of principes
-    When I follow "trometamol"
+    When I am on trometamol's classes page
     Then I should see "trometamol"
       And I should see "alcalinisants urinaires"
 
   Scenario: Show a principe having "interactions en propre"
     Given I have acide acetylsalicylique, antiagrégants plaquettaires as classes names for acide acetylsalicylique
-      And I am on the list of principes
-    When I follow "acide acetylsalicylique"
+    When I am on acide acetylsalicylique's classes page
     Then I should see "acide acetylsalicylique"
       And I should see "Interactions en propre"
       And I should see "mais voir aussi :"
@@ -32,8 +30,7 @@ Feature: Manage Principes
 
   Scenario: Show a principe having only "interactions en propre"
     Given I have acide acetohydroxamique as classes names for acide acetohydroxamique
-      And I am on the list of principes
-    When I follow "acide acetohydroxamique"
+    When I am on acide acetohydroxamique's classes page
     Then I should see "acide acetohydroxamique"
       And I should see "Interactions en propre"
       And I should see "uniquement"
@@ -59,7 +56,7 @@ Feature: Manage Principes
   Scenario: Destroy principe
     Given I have 4 principes
       And I am on valsartan's classes page
-    When I follow "Détruire"
+    When I press "Détruire"
     Then I should have 3 principes
 
   Scenario: Go back to principes list from principe view
@@ -81,10 +78,15 @@ Feature: Manage Principes
     Then I should see "tartampionate de sodium"
       And I should see "pas d'interactions répertoriées"
 
-
-@focus
   Scenario: Link to a classe when viewing a principes
     Given I have acide acetylsalicylique, antiagrégants plaquettaires as classes names for acide acetylsalicylique
       And I am on acide acetylsalicylique's classes page
     When I follow "Interactions en propre"
     Then I should see "acide acetylsalicylique"
+
+@focus
+  Scenario: Search for a principe's name
+    Given I am on the list of principes
+    When I fill in "Rechercher" with "salicylique"
+      And I press "Rechercher"
+    Then I should not see "valsartan"
