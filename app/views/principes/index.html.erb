@@ -1,6 +1,11 @@
 <% title "Principes actifs" %>
 <h1>Liste des principes actifs</h1>
-<% @principes.each do |principe| %>
-  <h2><%= link_to h(principe.name), principe %>&nbsp;<%= link_to "Modifier", edit_principe_path(principe) %></h2>
-<% end %>
+<table>
+  <% @principes.each do |principe| %>
+    <tr>
+      <td><%= link_to h(principe.name), principe %></td>
+      <td><%= link_to "Modifier", edit_principe_path(principe) %></td>
+    </tr>
+  <% end %>
+</table>
 <%= link_to "Rajouter un principe actif", new_principe_path %>
