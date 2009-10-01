@@ -14,6 +14,7 @@ class PrincipesController < ApplicationController
 
   def new
     @principe = Principe.new
+    @principe.classes.build
   
     respond_to do |wants|
       wants.html # new.html.erb
@@ -42,9 +43,10 @@ class PrincipesController < ApplicationController
 
   def update
     @principe = Principe.find(params[:id])
-  
+    @principe.attributes = params[:principe]
+
     respond_to do |wants|
-      if @principe.update_attributes(params[:principe])
+      if @principe.save
         flash[:notice] = 'Le principe actif a été modifié avec succès.'
         wants.html { redirect_to(@principe) }
         wants.xml  { head :ok }

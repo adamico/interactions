@@ -1,5 +1,10 @@
-<div class="interaction">
+<div class="classe">
   <p>
-    <%= f.collection_select(:classe_id, Classe.all, :id, :name) %>
+    <%= f.label :name, "Classe" %>
+    <%= f.text_field :name %>
   </p>
+  <% unless f.object.nil? || f.object.new_record? %>
+    <%= f.label :_delete, 'Enlever:' %>
+    <%= f.check_box :_delete %>
+  <% end %>
 </div>
