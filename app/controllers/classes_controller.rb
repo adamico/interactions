@@ -11,6 +11,7 @@ class ClassesController < ApplicationController
 
   def show
     @classe = Classe.find(params[:id])
+    @pnames = @classe.principes.collect { |p| p.name }
   
     respond_to do |wants|
       wants.html # show.html.erb

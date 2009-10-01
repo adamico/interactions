@@ -26,3 +26,10 @@ Given /^I have (.+) as interagents? names? for (.+)$/ do |i_names, c_name|
     classe.inter_classes.create!(:name => i_name)
   end
 end
+
+Given /^I have (.+) as principes? names? for (.+)$/ do |p_names, c_name|
+  classe = Classe.find_by_name!(c_name)
+  p_names.split(', ').each do |p_name|
+    classe.principes.create!(:name => p_name)
+  end
+end

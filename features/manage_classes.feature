@@ -1,7 +1,7 @@
 Feature: Manage Classes d'Interaction
-  In order to enter new IAM in the Drug Interaction Database
+  In order to update the IAM database
   As the admin
-  I want to browse, create, destroy, update classes
+  I want to browse, create, destroy, update classes and their interactions
 
   Background:
     Given I have principes named acide acetylsalicylique, valsartan, trometamol, acide acetohydroxamique
@@ -38,17 +38,24 @@ Feature: Manage Classes d'Interaction
     When I press "Détruire"
     Then I should have 3 classes 
 
-  Scenario: Show classe interactions
-    Given I have antagonistes des récepteurs de l'angiotensine II, anticoagulants oraux as interagents names for acide acetylsalicylique
-      And I am on acide acetylsalicylique's interactions page
-    Then I should see "acide acetylsalicylique"
-      And I should see "antagonistes des récepteurs de l'angiotensine II"
-      And I should see "anticoagulants oraux"
-
-@focus
   Scenario: Link to a classe from the list of principes
     Given I have acide acetylsalicylique, antiagrégants plaquettaires as classes names for acide acetylsalicylique
     And I am on the list of principes
     When I follow "Interactions en propre"
     Then I should see "acide acetylsalicylique"
 
+  Scenario: Show classe interactions
+    Given I have antagonistes des récepteurs de l'angiotensine II, anticoagulants oraux as interagents names for acide acetylsalicylique
+    When I am on acide acetylsalicylique's interactions page
+    Then I should see "acide acetylsalicylique"
+      And I should see "antagonistes des récepteurs de l'angiotensine II"
+      And I should see "anticoagulants oraux"
+
+  Scenario: Add new interactions to a class
+    
+@focus
+  Scenario: Show classe principes
+    Given I have abciximab (c 7e3b fab), clopidogrel, acide acetylsalicylique as principes names for antiagrégants plaquettaires
+    When I am on antiagrégants plaquettaires's interactions page
+    Then I should see "antiagrégants plaquettaires"
+    Then I should see "(abciximab (c 7e3b fab), clopidogrel, acide acetylsalicylique)"

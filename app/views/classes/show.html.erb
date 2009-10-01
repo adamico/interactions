@@ -1,5 +1,7 @@
 <% title @classe.name %>
 
+<p><%= "(" + @pnames.join(", ") + ")" unless @classe.principes.empty? %></p>
+
 <% @classe.interactions.each do |interaction| %>
   <p><%= interaction.inter_classe.name %></p>
 <% end %>
