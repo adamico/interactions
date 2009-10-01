@@ -1,9 +1,12 @@
 <% title @classe.name %>
 
-<p><%= "(" + @pnames.join(", ") + ")" unless @classe.principes.empty? %></p>
+<p><%= h @classe.description %></p>
+
+<p><%= pnames unless @classe.principes.empty? %></p>
 
 <% @classe.interactions.each do |interaction| %>
   <p><%= interaction.inter_classe.name %></p>
 <% end %>
 
 <p><%= button_to 'Détruire', @classe, :confirm => 'Êtes-vous sûr?', :method => :delete %></p>
+<p><%= link_to "Retourner à la liste", classes_path %></p>

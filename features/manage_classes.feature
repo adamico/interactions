@@ -53,7 +53,6 @@ Feature: Manage Classes d'Interaction
 
   Scenario: Add new interactions to a class
     
-@focus
   Scenario: Show classe principes
     Given I have abciximab (c 7e3b fab), clopidogrel, acide acetylsalicylique as principes names for antiagrégants plaquettaires
     When I am on antiagrégants plaquettaires's interactions page

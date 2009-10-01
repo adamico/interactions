@@ -6,7 +6,7 @@
   </tr>
   <% @classes.each do |classe| %>
     <tr>
-      <td><%=h classe.name %></td>
+      <td><%= link_to h(classe.name), classe %></td>
       <td><%= link_to "Modifier", edit_classe_path(classe) %></td>
     </tr>
   <% end %>
