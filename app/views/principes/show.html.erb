@@ -1,18 +1,24 @@
 <% title @principe.name %>
 
 <h2>Classes d'interaction</h2>
-<% @principe.classes.each do |classe| %>
-  <% if classe.name == @principe.name %>
-    <p>Interactions en propre
-    <% if @principe.classes.count == 1 %>
-       uniquement</p>
-    <% else %>
-      mais voir aussi :</p>
-    <% end %>
+<p>
+  <% if @principe.classes.empty? %>
+    pas d'interactions répertoriées
   <% else %>
-    <p><%= h(classe.name) %></p>
+    <% @principe.classes.each do |classe| %>
+      <% if classe.name == @principe.name %>
+        <%= link_to "Interactions en propre", classe_path(classe) %>
+        <% if @principe.classes.count == 1 %>
+          uniquement
+        <% else %>
+          mais voir aussi :
+        <% end %>
+      <% else %>
+        <%= link_to h(classe.name), classe_path(classe) %>
+      <% end %>
+    <% end %>
   <% end %>
-<% end %>
+</p>
 <p><%= link_to "Modifier", edit_principe_path(@principe) %></p>
-<p><%= link_to 'Détruire', @principe, :confirm => 'Êtes-vous sûr?', :method => :delete %></p>
+<p><%= button_to 'Détruire', @principe, :confirm => 'Êtes-vous sûr?', :method => :delete %></p>
 <p><%= link_to "Retourner à la liste", principes_path %></p>

@@ -12,8 +12,12 @@ Given /^I have no classes$/ do
   Classe.destroy_all
 end
 
-Then /^I should have 1 classes$/ do
-  Classe.all.count.should == 1
+Given /^I have ([0-9]+) classes$/ do |count|
+  Classe.all.count.should == count.to_i
+end
+
+Then /^I should have ([0-9]+) classes$/ do |count|
+  Classe.all.count.should == count.to_i
 end
 
 Given /^I have (.+) as interagents? names? for (.+)$/ do |i_names, c_name|

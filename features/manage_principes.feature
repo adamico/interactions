@@ -10,7 +10,9 @@ Feature: Manage Principes
   Scenario: List principes
     When I go to the list of principes
     Then I should see "acide acetylsalicylique"
-    And I should see "valsartan"
+      And I should see "valsartan"
+      And I should see "trometamol"
+      And I should see "acide acetohydroxamique"
 
   Scenario: Show a principe not having "interactions en propre"
     Given I have alcalinisants urinaires as classes names for trometamol
@@ -60,8 +62,29 @@ Feature: Manage Principes
     When I follow "Détruire"
     Then I should have 3 principes
 
-@focus
   Scenario: Go back to principes list from principe view
     Given I am on valsartan's classes page
     When I follow "Retourner à la liste"
     Then I should be on the list of principes
+
+  Scenario: Show classes d'interaction on the list of principes
+    Given I have acide acetylsalicylique, antiagrégants plaquettaires as classes names for acide acetylsalicylique
+    When I go to the list of principes
+    Then I should see "acide acetylsalicylique"
+      And I should see "Interactions en propre"
+      And I should see "mais voir aussi :"
+      And I should see "antiagrégants plaquettaires"
+
+  Scenario: Tell there are no classes d'interaction when it's the case
+    Given I have principe named tartampionate de sodium
+    When I go to the list of principes
+    Then I should see "tartampionate de sodium"
+      And I should see "pas d'interactions répertoriées"
+
+
+@focus
+  Scenario: Link to a classe when viewing a principes
+    Given I have acide acetylsalicylique, antiagrégants plaquettaires as classes names for acide acetylsalicylique
+      And I am on acide acetylsalicylique's classes page
+    When I follow "Interactions en propre"
+    Then I should see "acide acetylsalicylique"

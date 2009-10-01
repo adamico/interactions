@@ -1,6 +1,6 @@
 class PrincipesController < ApplicationController
   def index
-    @principes = Principe.all
+    @principes = Principe.all(:include => :classes)
   end
 
   def show

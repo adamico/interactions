@@ -32,9 +32,23 @@ Feature: Manage Classes d'Interaction
     Then I should see "La classe d'interaction a été modifiée avec succès."
       And I should see "une autre classe"
 
+  Scenario: Destroy classe
+    Given I have 4 classes
+      And I am on acide acetylsalicylique's interactions page
+    When I press "Détruire"
+    Then I should have 3 classes 
+
   Scenario: Show classe interactions
     Given I have antagonistes des récepteurs de l'angiotensine II, anticoagulants oraux as interagents names for acide acetylsalicylique
       And I am on acide acetylsalicylique's interactions page
     Then I should see "acide acetylsalicylique"
       And I should see "antagonistes des récepteurs de l'angiotensine II"
       And I should see "anticoagulants oraux"
+
+@focus
+  Scenario: Link to a classe from the list of principes
+    Given I have acide acetylsalicylique, antiagrégants plaquettaires as classes names for acide acetylsalicylique
+    And I am on the list of principes
+    When I follow "Interactions en propre"
+    Then I should see "acide acetylsalicylique"
+

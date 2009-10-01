@@ -3,3 +3,5 @@
 <% @classe.interactions.each do |interaction| %>
   <p><%= interaction.inter_classe.name %></p>
 <% end %>
+
+<p><%= button_to 'Détruire', @classe, :confirm => 'Êtes-vous sûr?', :method => :delete %></p>

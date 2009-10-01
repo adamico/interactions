@@ -60,4 +60,14 @@ class ClassesController < ApplicationController
       end
     end
   end
+
+  def destroy
+    @classe = Classe.find(params[:id])
+    @classe.destroy
+  
+    respond_to do |wants|
+      wants.html { redirect_to(classes_url) }
+      wants.xml  { head :ok }
+    end
+  end
 end

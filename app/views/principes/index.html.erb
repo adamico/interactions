@@ -3,8 +3,26 @@
 <table>
   <% @principes.each do |principe| %>
     <tr>
-      <td><%= link_to h(principe.name), principe %></td>
       <td><%= link_to "Modifier", edit_principe_path(principe) %></td>
+      <th><%= h(principe.name) %></th>
+      <td>
+        <% if principe.classes.empty? %>
+          pas d'interactions répertoriées
+        <% else %>
+          <% principe.classes.each do |classe| %>
+            <% if classe.name == principe.name %>
+              <%= link_to "Interactions en propre", classe_path(classe) %>
+              <% if principe.classes.count == 1 %>
+                uniquement
+              <% else %>
+                mais voir aussi :
+              <% end %>
+            <% else %>
+              <%= link_to h(classe.name), classe_path(classe) %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </td>
     </tr>
   <% end %>
 </table>
