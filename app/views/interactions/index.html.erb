@@ -1,0 +1,25 @@
+<% title 'Thesaurus des Interactions Médicamenteuses' %>
+
+<h3>Mise à jour : juin 2009</h3>
+
+<% form_for @search do |f| %>
+  <ul class="formlist">
+    <li>
+      <%= f.label :classe_name_like, "Saisir un principe actif ou une classe thérapeutique" %>
+    </li>
+    <li>
+      <%= f.text_field :classe_name_like %>
+    </li>
+    <li>
+      <%= submit_tag "Rechercher", :name => nil %>
+    </li>
+  </ul>
+<% end %>
+
+<% unless params[:search].blank? %>
+  <% @interactions.each do |interaction| %>
+    <h2>
+      <%= link_to h(interaction.classe.name.capitalize), classe_path(interaction.classe) %>
+    </h2>
+  <% end %>
+<% end %>

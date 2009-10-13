@@ -1,12 +1,32 @@
-<% title @classe.name %>
+<% title @classe.name.capitalize, show_title=false %>
+<div class="banner">
 
-<p><%= h @classe.description %></p>
+  <h1 class="notopmargin"><%= h @classe.name.capitalize %></h1>
+  <p><%= h @classe.description %></p>
 
-<p><%= pnames unless @classe.principes.empty? %></p>
+  <p class="classlinks"><%= pnames unless @classe.principes.empty? %></p>
+</div>
 
 <% @classe.interactions.each do |interaction| %>
-  <p><%= interaction.inter_classe.name %></p>
+  <h3> + <%= h interaction.inter_classe.name %></h3>
+  <table>
+    <tr>
+      <td width="50%"><%= h interaction.risque.libelle %></td>
+      <td>
+        <table>
+          <% interaction.attribution_contraintes.each do |attr_contrainte| %>
+            <tr>
+              <th><%= h attr_contrainte.contrainte.name %></th>
+            </tr>
+            <tr>
+              <td><%= h attr_contrainte.cat %></td>
+            </tr>
+          <% end %>
+        </table>
+      </td>
+    </tr>
+  </table>
 <% end %>
 
 <p><%= button_to 'Détruire', @classe, :confirm => 'Êtes-vous sûr?', :method => :delete %></p>
-<p><%= link_to "Retourner à la liste", classes_path %></p>
+<p><%= link_to "Retourner à l'accueil", root_path %></p>

@@ -1,8 +1,18 @@
 <h1>Thesaurus des Interactions Médicamenteuses</h1>
 <h3>Mise à jour : juin 2009</h3>
 
-<% form_tag principes_path, :method =>'get' do %>
-  <%= label_tag :search, "Rechercher" %>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "Rechercher", :name => nil %>
-<% end -%>
+<% form_for @search do |f| %>
+  <ul class="formlist">
+    <li>
+      <%= f.label :name_like, "Principe actif" %>
+      <%= f.text_field :name_like %>
+    </li>
+    <li>
+      <%= f.label :classes_name_like, "Classe d'interaction" %>
+      <%= f.text_field :classes_name_like %>
+    </li>
+    <li>
+      <%= submit_tag "Rechercher", :name => nil %>
+    </li>
+  </ul>
+<% end %>
