@@ -1,0 +1,96 @@
+ACETAZOLAMIDE
+Voir aussi : alcalinisants urinaires
+
+2
+
++ CARBAMAZEPINE
+Augmentation des concentrations plasmatiques de carbamazépine 
+avec signes de surdosage.
+
+ACIDE ACETOHYDROXAMIQUE
+
++ FER
+
+Diminution de l'absorption digestive de ces deux médicaments 
+par chélation du fer.
+
+ACIDE ACETYLSALICYLIQUE
+Voir aussi : antiagrégants plaquettaires
+
+Précaution d'emploi
+Surveillance clinique et, si besoin, contrôle des concentrations 
+plasmatiques de carbamazépine et réduction éventuelle de sa 
+posologie.
+
+A prendre en compte
+
++ ANTAGONISTES DES RÉCEPTEURS DE L'ANGIOTENSINE II
+Pour des doses anti-inflammatoires d'acide acétylsalicylique 
+(>=1g par prise et/ou >=3g par jour) ou pour des doses antalgiques 
+ou antipyrétiques (>=500 mg par prise et/ou <3g par jour) : 
+Insuffisance rénale aiguë chez le malade déshydraté, par 
+diminution de la filtration glomérulaire secondaire à une diminution 
+de la synthèse des prostaglandines rénales. Par ailleurs, 
+réduction de l'effet antihypertenseur.
+
++ ANTICOAGULANTS ORAUX
+Majoration du risque hémorragique, notamment en cas 
+d’antécédent d’ulcère gastro-duodénal.
+
++ ANTI-INFLAMMATOIRES NON STÉROÏDIENS
+Majoration du risque ulcérogène et hémorragique digestif.
+
+Précaution d'emploi
+Hydrater le malade et surveiller la fonction rénale en début de 
+traitement.
+
+CI - ASDEC - APEC
+Contre-indication avec :
+- des doses anti-inflammatoires d'acide acétylsalicylique (>=1g par 
+prise et/ou >=3g par jour)
+- des doses antalgiques ou antipyrétiques (>=500 mg par prise et/ou 
+<3g par jour) et en cas d’antécédent d’ulcère gastro-duodénal
+
++ CLOPIDOGREL
+Majoration du risque hémorragique par addition des activités 
+antiagrégantes plaquettaires.
+
++ DEFERASIROX
+Avec l'acide acétylsalicylique à doses anti-inflammatoires  (>= 1g 
+par prise et/ou >= 3g par jour) ou pour des doses antalgiques ou 
+antipyrétiques (>= 500 mg par prise et/ou < 3g par jour) : 
+majoration du risque ulcérogène et hémorragique digestif.
+
+Association déconseillée avec :
+- des doses antalgiques ou antipyrétiques (>=500 mg par prise et/ou 
+<3g par jour) en l'absence d’antécédent d’ulcère gastro-duodénal
+- des doses antiagrégantes (de 50 mg à 375 mg par jour) et en cas 
+d’antécédent d’ulcère gastro-duodénal. Nécéssité d'un contrôle, en 
+particulier du temps de saignement.
+
+A prendre en compte avec :
+- des doses antiagrégantes (de 50 mg à 375 mg par jour)
+
+ASDEC - APEC
+Association déconseillée avec :
+- des doses anti-inflammatoires d'acide acétylsalicylique (>=1g par 
+prise et/ou >=3g par jour)
+- des doses antalgiques ou antipyrétiques (>=500 mg par prise et/ou 
+<3g par jour)
+
+A prendre en compte avec :
+- des doses antiagrégantes (de 50 mg à 375 mg par jour en 1 ou 
+plusieurs prises)
+
+ASDEC - PE
+Association déconseillée :
+-En dehors des indications validées pour cette association dans les 
+syndromes coronariens aigus.
+
+Précaution d'emploi :
+-Dans les indications validées pour cette association dans les 
+syndromes coronariens aigus. Surveillance clinique.
+
+A prendre en compte
+
+

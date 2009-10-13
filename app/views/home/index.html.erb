@@ -1,0 +1,8 @@
+<h1>Thesaurus des Interactions Médicamenteuses</h1>
+<h3>Mise à jour : juin 2009</h3>
+
+<% form_tag principes_path, :method =>'get' do %>
+  <%= label_tag :search, "Rechercher" %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Rechercher", :name => nil %>
+<% end -%>

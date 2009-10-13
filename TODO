@@ -1,3 +1,3 @@
 Database stuff:
-- importer 'niveaux de contrainte'
-- importer liste principes, spécialités et classes
+- write a script to import the thesaurus pdf
+- write a script to extract classes from index

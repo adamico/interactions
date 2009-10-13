@@ -6,7 +6,7 @@
   <%= submit_tag "Rechercher", :name => nil %>
 <% end -%>
 
-<table>
+<table style="margin-top:5em">
   <% @principes.each do |principe| %>
     <tr>
       <td><%= link_to "Modifier", edit_principe_path(principe) %></td>
